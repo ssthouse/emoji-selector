@@ -1,4 +1,13 @@
 .emoji-item {
-  width: 24px;
-  height: 24px;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.emoji-item:hover {
+  background-color: grey;
 }
