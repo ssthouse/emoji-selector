@@ -8,8 +8,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  width: 24px;
-  height: 24px;
+  padding: 4px;
 }
 
 .emoji-selector .emoji-icon:hover {

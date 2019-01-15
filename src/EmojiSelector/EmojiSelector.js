@@ -1,7 +1,7 @@
 import EmojiList from './emojiList.json'
 import React, { Component } from 'react'
 import './EmojiSelector.css'
-import EmojiBoard from './EmojiBoard/EmojiBoard.js'
+import EmojiBoard from '../EmojiBoard/EmojiBoard.js'
 
 class EmojiSelector extends Component {
   constructor(props) {
@@ -22,7 +22,8 @@ class EmojiSelector extends Component {
 
   handleEmojiIconClick() {
     const newState = {
-      showEmojiBoard: !this.state.showEmojiBoard
+      showEmojiBoard: !this.state.showEmojiBoard,
+      searchKey: ''
     }
     this.setState(newState)
   }
@@ -47,8 +48,16 @@ class EmojiSelector extends Component {
 
     return (
       <div className="emoji-selector">
-        <div className="emoji-icon" onClick={() => this.handleEmojiIconClick()}>
-          😁
+        <div
+          className="emoji-icon"
+          style={{
+            fontSize: `${this.props.iconSize}px`,
+            width: `${this.props.iconSize}px`,
+            height: `${this.props.iconSize}px`
+          }}
+          onClick={() => this.handleEmojiIconClick()}
+        >
+          <span>😁</span>
         </div>
 
         <div
@@ -70,6 +79,10 @@ class EmojiSelector extends Component {
       </div>
     )
   }
+}
+
+EmojiSelector.defaultProps = {
+  iconSize: 16
 }
 
 export default EmojiSelector

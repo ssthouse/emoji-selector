@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './App.css'
-import EmojiSelector from './EmojiSelector'
+import EmojiSelector from './EmojiSelector/EmojiSelector'
 
 class App extends Component {
   constructor(props) {
@@ -12,10 +12,10 @@ class App extends Component {
     return (
       <div className="App">
         <input
-          style={{ width: '100px', height: '100px' }}
+          className="emoji-input"
           ref={this.testInput}
         />
-        <EmojiSelector inputRef={this.testInput} />
+        <EmojiSelector inputRef={this.testInput} iconSize={18} />
       </div>
     )
   }
