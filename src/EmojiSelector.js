@@ -1,6 +1,7 @@
 import EmojiList from './emojiList.json'
 import React, { Component } from 'react'
 import './EmojiSelector.css'
+import EmojiBoard from './EmojiBoard/EmojiBoard.js'
 
 class EmojiSelector extends Component {
   constructor(props) {
@@ -24,8 +25,8 @@ class EmojiSelector extends Component {
     return (
       <div className="emoji-selector">
         <span>emoji selector</span>
-        <input className="emoji-search-input"></input>
-        {/* <EmojiBoard emojiList={searchResult}/> */}
+        <input className="emoji-search-input" />
+        <EmojiBoard emojiList={searchResult} />
       </div>
     )
   }

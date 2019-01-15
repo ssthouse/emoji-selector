@@ -1,0 +1,10 @@
+.emoji-board {
+  width: 100%;
+  background-color: lightgrey;
+  flex-grow: 1;
+  overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
