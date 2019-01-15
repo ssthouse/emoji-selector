@@ -27,6 +27,14 @@ class EmojiSelector extends Component {
     this.setState(newState)
   }
 
+  handleSearchKeyChange(e) {
+    console.log('input key chaned!!!')
+    const newSearchKey = e.target.value
+    this.setState({
+      searchKey: newSearchKey
+    })
+  }
+
   render() {
     let searchResult
     if (this.state.searchKey === '') {
@@ -38,11 +46,10 @@ class EmojiSelector extends Component {
     }
 
     return (
-      <div
-        className="emoji-selector"
-        onClick={() => this.handleEmojiIconClick()}
-      >
-        <div className="emoji-icon">😁</div>
+      <div className="emoji-selector">
+        <div className="emoji-icon" onClick={() => this.handleEmojiIconClick()}>
+          😁
+        </div>
 
         <div
           className="emoji-board-card"
@@ -50,7 +57,11 @@ class EmojiSelector extends Component {
             display: this.state.showEmojiBoard ? 'block' : 'none'
           }}
         >
-          <input className="emoji-search-input" placeholder="input keyword" />
+          <input
+            className="emoji-search-input"
+            onChange={e => this.handleSearchKeyChange(e)}
+            placeholder="input keyword"
+          />
           <EmojiBoard
             emojiList={searchResult}
             handleEmojiClick={this.handleEmojiClick}

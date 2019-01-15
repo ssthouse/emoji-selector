@@ -18,11 +18,15 @@
 
 .emoji-board-card {
   position: absolute;
+  flex-direction: column;
   left: 0;
   top: 24px;
   width: 240px;
-  height: 200px;
   overflow: hidden;
+}
+
+.emoji-board-card .emoji-board {
+  flex-grow: 1;
 }
 
 .emoji-board-card .emoji-search-input {
