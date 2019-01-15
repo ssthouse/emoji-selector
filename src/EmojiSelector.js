@@ -8,7 +8,8 @@ class EmojiSelector extends Component {
     super(props)
     this.state = {
       searchKey: '',
-      emojiList: EmojiList
+      emojiList: EmojiList,
+      showEmojiBoard: false
     }
     this.handleEmojiClick = this.handleEmojiClick.bind(this)
   }
@@ -17,6 +18,13 @@ class EmojiSelector extends Component {
     console.log('change input value with: ' + emojiSymbol)
     let originVal = this.props.inputRef.current.value
     this.props.inputRef.current.value = originVal + emojiSymbol
+  }
+
+  handleEmojiIconClick() {
+    const newState = {
+      showEmojiBoard: !this.state.showEmojiBoard
+    }
+    this.setState(newState)
   }
 
   render() {
@@ -30,13 +38,24 @@ class EmojiSelector extends Component {
     }
 
     return (
-      <div className="emoji-selector">
-        <span>emoji selector</span>
-        <input className="emoji-search-input" />
-        <EmojiBoard
-          emojiList={searchResult}
-          handleEmojiClick={this.handleEmojiClick}
-        />
+      <div
+        className="emoji-selector"
+        onClick={() => this.handleEmojiIconClick()}
+      >
+        <div className="emoji-icon">😁</div>
+
+        <div
+          className="emoji-board-card"
+          style={{
+            display: this.state.showEmojiBoard ? 'block' : 'none'
+          }}
+        >
+          <input className="emoji-search-input" placeholder="input keyword" />
+          <EmojiBoard
+            emojiList={searchResult}
+            handleEmojiClick={this.handleEmojiClick}
+          />
+        </div>
       </div>
     )
   }

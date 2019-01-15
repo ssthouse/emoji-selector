@@ -1,6 +1,7 @@
 .emoji-board {
   width: 100%;
-  background-color: lightgrey;
+  height: 200px;
+  background-color: white;
   flex-grow: 1;
   overflow-y: scroll;
   display: flex;
