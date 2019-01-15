@@ -1,0 +1,15 @@
+.emoji-selector {
+  width: 240px;
+  height: 200px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.emoji-search-input {
+  width: 100%;
+  height: 30px;
+  background-color: grey;
+}
