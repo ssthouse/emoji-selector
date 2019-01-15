@@ -1,4 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Emoji Selector demo
+
+A simple emoji selector demo building with React.
+
+![demo](https://raw.githubusercontent.com/ssthouse/emoji-selector/master/demo.gif)
 
 ## Available Scripts
 

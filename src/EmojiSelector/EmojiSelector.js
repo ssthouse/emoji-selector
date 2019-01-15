@@ -15,7 +15,6 @@ class EmojiSelector extends Component {
   }
 
   handleEmojiClick(emojiSymbol) {
-    console.log('change input value with: ' + emojiSymbol)
     let originVal = this.props.inputRef.current.value
     this.props.inputRef.current.value = originVal + emojiSymbol
   }
@@ -29,7 +28,6 @@ class EmojiSelector extends Component {
   }
 
   handleSearchKeyChange(e) {
-    console.log('input key chaned!!!')
     const newSearchKey = e.target.value
     this.setState({
       searchKey: newSearchKey
